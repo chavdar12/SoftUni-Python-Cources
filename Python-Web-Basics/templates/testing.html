@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing profiles</title>
+</head>
+<body>
+    <ul>
+        {% for profile in profiles %}
+            <li>
+                {{ profile.name }}:{{ profile.egn }}
+            </li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'profiles' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button>Create profile</button>
+    </form>
+</body>
+</html>
